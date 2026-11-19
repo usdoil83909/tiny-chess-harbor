@@ -14,7 +14,9 @@ MAKEFUN_ENV_URL=http://127.0.0.1:8080 python3 main.py
 
 Validated on the kit's practice gauntlet: beat the depth-2, depth-3, depth-4 and nodes-100k house opponents, drew two higher-strength opponents.
 
-The engine also carries a 124-position opening book. The kit's `compress src.py --out main.py` command packs the engine and book from `src.py` into `main.py`.
+## Opening book
+
+`src.py` carries a composed opening book in dictionary `B`, keyed by the board plus the side to move. Its roughly 124 entries cover Italian, Ruy Lopez, Scotch, Queen's Gambit and Slav lines, 2–4 plies deep. The engine consults this book in `ac()` before the search runs. `main.py` is the packed entry produced by the kit compressor: `compress src.py --out main.py` bundles the engine and book from `src.py` into that file.
 
 ## License
 
