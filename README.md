@@ -2,7 +2,7 @@
 
 A chess engine in under 4 KB of Python for the make.fun bounty "Build the strongest chess engine in 4 KB of Python" ($500 USDC).
 
-`main.py` (4,026 bytes) unpacks and runs a full negamax search engine with quiescence search, null-move pruning, history heuristic, MVV-LVA ordering, PST evaluation and repetition avoidance. It speaks the make.fun env protocol: start it with `MAKEFUN_ENV_URL` set and it plays the graded gauntlet.
+`main.py` (4,081 bytes) unpacks and runs a full negamax search engine with quiescence search, null-move pruning, history heuristic, MVV-LVA ordering, PST evaluation and repetition avoidance. It speaks the make.fun env protocol: start it with `MAKEFUN_ENV_URL` set and it plays the graded gauntlet.
 
 ## Run it
 
@@ -13,6 +13,8 @@ MAKEFUN_ENV_URL=http://127.0.0.1:8080 python3 main.py
 ## Strength
 
 Validated on the kit's practice gauntlet: beat the depth-2, depth-3, depth-4 and nodes-100k house opponents, drew two higher-strength opponents.
+
+The engine also carries a 124-position opening book. The kit's `compress src.py --out main.py` command packs the engine and book from `src.py` into `main.py`.
 
 ## License
 
